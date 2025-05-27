@@ -1,9 +1,15 @@
-"use client"
+"use client";
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Shield,
   ArrowLeft,
@@ -20,28 +26,52 @@ import {
   Thermometer,
   Heart,
   Download,
-} from "lucide-react"
-import Link from "next/link"
+} from "lucide-react";
+import Link from "next/link";
 
 const emergencyContacts = [
   { name: "Bombeiros", number: "193", description: "Incêndios e resgates" },
   { name: "SAMU", number: "192", description: "Emergências médicas" },
   { name: "Polícia Militar", number: "190", description: "Segurança pública" },
   { name: "Defesa Civil", number: "199", description: "Desastres naturais" },
-]
+];
 
 const emergencyKit = [
-  { item: "Água potável", quantity: "4 litros por pessoa por dia", priority: "high" },
-  { item: "Alimentos não perecíveis", quantity: "3 dias de suprimento", priority: "high" },
-  { item: "Medicamentos essenciais", quantity: "7 dias de suprimento", priority: "high" },
+  {
+    item: "Água potável",
+    quantity: "4 litros por pessoa por dia",
+    priority: "high",
+  },
+  {
+    item: "Alimentos não perecíveis",
+    quantity: "3 dias de suprimento",
+    priority: "high",
+  },
+  {
+    item: "Medicamentos essenciais",
+    quantity: "7 dias de suprimento",
+    priority: "high",
+  },
   { item: "Lanterna e pilhas", quantity: "1 por pessoa", priority: "high" },
   { item: "Rádio portátil", quantity: "1 unidade", priority: "medium" },
-  { item: "Kit de primeiros socorros", quantity: "1 completo", priority: "high" },
-  { item: "Documentos importantes", quantity: "Cópias em saco plástico", priority: "high" },
-  { item: "Dinheiro em espécie", quantity: "Quantia pequena", priority: "medium" },
+  {
+    item: "Kit de primeiros socorros",
+    quantity: "1 completo",
+    priority: "high",
+  },
+  {
+    item: "Documentos importantes",
+    quantity: "Cópias em saco plástico",
+    priority: "high",
+  },
+  {
+    item: "Dinheiro em espécie",
+    quantity: "Quantia pequena",
+    priority: "medium",
+  },
   { item: "Roupas extras", quantity: "1 muda por pessoa", priority: "medium" },
   { item: "Cobertores", quantity: "1 por pessoa", priority: "medium" },
-]
+];
 
 const disasterPreparation = {
   earthquake: {
@@ -136,7 +166,7 @@ const disasterPreparation = {
       "Documente danos para o seguro",
     ],
   },
-}
+};
 
 export default function PreparacaoPage() {
   return (
@@ -146,13 +176,18 @@ export default function PreparacaoPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center py-4">
             <div className="flex items-center space-x-3">
-              <Link href="/" className="flex items-center space-x-2 text-gray-600 hover:text-blue-600">
+              <Link
+                href="/"
+                className="flex items-center space-x-2 text-gray-600 hover:text-blue-600"
+              >
                 <ArrowLeft className="h-5 w-5" />
                 <span>Voltar</span>
               </Link>
               <div className="h-6 w-px bg-gray-300" />
               <Shield className="h-8 w-8 text-blue-600" />
-              <h1 className="text-2xl font-bold text-gray-900">Guia de Preparação</h1>
+              <h1 className="text-2xl font-bold text-gray-900">
+                Guia de Preparação
+              </h1>
             </div>
           </div>
         </div>
@@ -251,59 +286,88 @@ export default function PreparacaoPage() {
               <CardHeader>
                 <CardTitle>Passos Básicos de Preparação</CardTitle>
                 <CardDescription>
-                  Siga estes passos fundamentais para estar preparado para qualquer emergência
+                  Siga estes passos fundamentais para estar preparado para
+                  qualquer emergência
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-4">
-                    <h3 className="font-semibold text-lg">Antes da Emergência</h3>
+                    <h3 className="font-semibold text-lg">
+                      Antes da Emergência
+                    </h3>
                     <div className="space-y-3">
                       <div className="flex items-start space-x-3">
                         <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <span className="text-xs font-bold text-blue-600">1</span>
+                          <span className="text-xs font-bold text-blue-600">
+                            1
+                          </span>
                         </div>
                         <div>
-                          <div className="font-medium">Monte um kit de emergência</div>
-                          <div className="text-sm text-gray-600">Água, comida, medicamentos e suprimentos básicos</div>
+                          <div className="font-medium">
+                            Monte um kit de emergência
+                          </div>
+                          <div className="text-sm text-gray-600">
+                            Água, comida, medicamentos e suprimentos básicos
+                          </div>
                         </div>
                       </div>
                       <div className="flex items-start space-x-3">
                         <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <span className="text-xs font-bold text-blue-600">2</span>
+                          <span className="text-xs font-bold text-blue-600">
+                            2
+                          </span>
                         </div>
                         <div>
-                          <div className="font-medium">Crie um plano familiar</div>
-                          <div className="text-sm text-gray-600">Rotas de evacuação e pontos de encontro</div>
+                          <div className="font-medium">
+                            Crie um plano familiar
+                          </div>
+                          <div className="text-sm text-gray-600">
+                            Rotas de evacuação e pontos de encontro
+                          </div>
                         </div>
                       </div>
                       <div className="flex items-start space-x-3">
                         <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <span className="text-xs font-bold text-blue-600">3</span>
+                          <span className="text-xs font-bold text-blue-600">
+                            3
+                          </span>
                         </div>
                         <div>
-                          <div className="font-medium">Mantenha-se informado</div>
-                          <div className="text-sm text-gray-600">Configure alertas e monitore notícias</div>
+                          <div className="font-medium">
+                            Mantenha-se informado
+                          </div>
+                          <div className="text-sm text-gray-600">
+                            Configure alertas e monitore notícias
+                          </div>
                         </div>
                       </div>
                     </div>
                   </div>
 
                   <div className="space-y-4">
-                    <h3 className="font-semibold text-lg">Durante a Emergência</h3>
+                    <h3 className="font-semibold text-lg">
+                      Durante a Emergência
+                    </h3>
                     <div className="space-y-3">
                       <div className="flex items-start space-x-3">
                         <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <span className="text-xs font-bold text-red-600">1</span>
+                          <span className="text-xs font-bold text-red-600">
+                            1
+                          </span>
                         </div>
                         <div>
                           <div className="font-medium">Mantenha a calma</div>
-                          <div className="text-sm text-gray-600">Pense claramente e siga seu plano</div>
+                          <div className="text-sm text-gray-600">
+                            Pense claramente e siga seu plano
+                          </div>
                         </div>
                       </div>
                       <div className="flex items-start space-x-3">
                         <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <span className="text-xs font-bold text-red-600">2</span>
+                          <span className="text-xs font-bold text-red-600">
+                            2
+                          </span>
                         </div>
                         <div>
                           <div className="font-medium">Siga as autoridades</div>
@@ -314,11 +378,15 @@ export default function PreparacaoPage() {
                       </div>
                       <div className="flex items-start space-x-3">
                         <div className="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                          <span className="text-xs font-bold text-red-600">3</span>
+                          <span className="text-xs font-bold text-red-600">
+                            3
+                          </span>
                         </div>
                         <div>
                           <div className="font-medium">Comunique-se</div>
-                          <div className="text-sm text-gray-600">Informe familiares sobre sua situação</div>
+                          <div className="text-sm text-gray-600">
+                            Informe familiares sobre sua situação
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -333,23 +401,37 @@ export default function PreparacaoPage() {
               <CardHeader>
                 <CardTitle>Kit de Emergência Essencial</CardTitle>
                 <CardDescription>
-                  Mantenha estes itens sempre prontos e acessíveis para situações de emergência
+                  Mantenha estes itens sempre prontos e acessíveis para
+                  situações de emergência
                 </CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="grid gap-4">
                   {emergencyKit.map((item, index) => (
-                    <div key={index} className="flex items-center justify-between p-3 border rounded-lg">
+                    <div
+                      key={index}
+                      className="flex items-center justify-between p-3 border rounded-lg"
+                    >
                       <div className="flex items-center space-x-3">
                         <CheckCircle
-                          className={`h-5 w-5 ${item.priority === "high" ? "text-red-500" : "text-yellow-500"}`}
+                          className={`h-5 w-5 ${
+                            item.priority === "high"
+                              ? "text-red-500"
+                              : "text-yellow-500"
+                          }`}
                         />
                         <div>
                           <div className="font-medium">{item.item}</div>
-                          <div className="text-sm text-gray-600">{item.quantity}</div>
+                          <div className="text-sm text-gray-600">
+                            {item.quantity}
+                          </div>
                         </div>
                       </div>
-                      <Badge variant={item.priority === "high" ? "destructive" : "secondary"}>
+                      <Badge
+                        variant={
+                          item.priority === "high" ? "destructive" : "secondary"
+                        }
+                      >
                         {item.priority === "high" ? "Essencial" : "Importante"}
                       </Badge>
                     </div>
@@ -360,12 +442,18 @@ export default function PreparacaoPage() {
                   <div className="flex items-start space-x-3">
                     <AlertTriangle className="h-5 w-5 text-blue-600 mt-0.5" />
                     <div>
-                      <div className="font-medium text-blue-900">Dicas Importantes</div>
+                      <div className="font-medium text-blue-900">
+                        Dicas Importantes
+                      </div>
                       <ul className="text-sm text-blue-800 mt-2 space-y-1">
                         <li>• Verifique e atualize seu kit a cada 6 meses</li>
-                        <li>• Substitua água e alimentos próximos ao vencimento</li>
+                        <li>
+                          • Substitua água e alimentos próximos ao vencimento
+                        </li>
                         <li>• Mantenha o kit em local de fácil acesso</li>
-                        <li>• Considere kits adicionais para carro e trabalho</li>
+                        <li>
+                          • Considere kits adicionais para carro e trabalho
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -377,7 +465,7 @@ export default function PreparacaoPage() {
           <TabsContent value="disasters" className="space-y-6">
             <div className="grid gap-6">
               {Object.entries(disasterPreparation).map(([key, disaster]) => {
-                const Icon = disaster.icon
+                const Icon = disaster.icon;
                 return (
                   <Card key={key}>
                     <CardHeader>
@@ -397,7 +485,10 @@ export default function PreparacaoPage() {
                           </h4>
                           <ul className="space-y-2">
                             {disaster.before.map((item, index) => (
-                              <li key={index} className="text-sm flex items-start space-x-2">
+                              <li
+                                key={index}
+                                className="text-sm flex items-start space-x-2"
+                              >
                                 <CheckCircle className="h-4 w-4 text-green-600 mt-0.5 flex-shrink-0" />
                                 <span>{item}</span>
                               </li>
@@ -412,7 +503,10 @@ export default function PreparacaoPage() {
                           </h4>
                           <ul className="space-y-2">
                             {disaster.during.map((item, index) => (
-                              <li key={index} className="text-sm flex items-start space-x-2">
+                              <li
+                                key={index}
+                                className="text-sm flex items-start space-x-2"
+                              >
                                 <AlertTriangle className="h-4 w-4 text-orange-600 mt-0.5 flex-shrink-0" />
                                 <span>{item}</span>
                               </li>
@@ -427,7 +521,10 @@ export default function PreparacaoPage() {
                           </h4>
                           <ul className="space-y-2">
                             {disaster.after.map((item, index) => (
-                              <li key={index} className="text-sm flex items-start space-x-2">
+                              <li
+                                key={index}
+                                className="text-sm flex items-start space-x-2"
+                              >
                                 <Heart className="h-4 w-4 text-blue-600 mt-0.5 flex-shrink-0" />
                                 <span>{item}</span>
                               </li>
@@ -437,7 +534,7 @@ export default function PreparacaoPage() {
                       </div>
                     </CardContent>
                   </Card>
-                )
+                );
               })}
             </div>
           </TabsContent>
@@ -450,16 +547,25 @@ export default function PreparacaoPage() {
                     <Phone className="h-5 w-5" />
                     <span>Contatos de Emergência</span>
                   </CardTitle>
-                  <CardDescription>Números importantes para situações de emergência no Brasil</CardDescription>
+                  <CardDescription>
+                    Números importantes para situações de emergência no Brasil
+                  </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   {emergencyContacts.map((contact, index) => (
-                    <div key={index} className="flex items-center justify-between p-3 border rounded-lg">
+                    <div
+                      key={index}
+                      className="flex items-center justify-between p-3 border rounded-lg"
+                    >
                       <div>
                         <div className="font-medium">{contact.name}</div>
-                        <div className="text-sm text-gray-600">{contact.description}</div>
+                        <div className="text-sm text-gray-600">
+                          {contact.description}
+                        </div>
                       </div>
-                      <div className="text-2xl font-bold text-blue-600">{contact.number}</div>
+                      <div className="text-2xl font-bold text-blue-600">
+                        {contact.number}
+                      </div>
                     </div>
                   ))}
                 </CardContent>
@@ -471,36 +577,40 @@ export default function PreparacaoPage() {
                     <Users className="h-5 w-5" />
                     <span>Plano de Comunicação Familiar</span>
                   </CardTitle>
-                  <CardDescription>Configure um plano para manter contato com sua família</CardDescription>
+                  <CardDescription>
+                    Configure um plano para manter contato com sua família
+                  </CardDescription>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="space-y-3">
                     <div className="p-3 bg-gray-50 rounded-lg">
-                      <div className="font-medium mb-2">Contato fora da região</div>
+                      <div className="font-medium mb-2">
+                        Contato fora da região
+                      </div>
                       <div className="text-sm text-gray-600">
-                        Escolha um parente ou amigo em outra cidade como ponto de contato central
+                        Escolha um parente ou amigo em outra cidade como ponto
+                        de contato central
                       </div>
                     </div>
 
                     <div className="p-3 bg-gray-50 rounded-lg">
                       <div className="font-medium mb-2">Pontos de encontro</div>
                       <div className="text-sm text-gray-600">
-                        Defina dois locais: um próximo à sua casa e outro fora do bairro
+                        Defina dois locais: um próximo à sua casa e outro fora
+                        do bairro
                       </div>
                     </div>
 
                     <div className="p-3 bg-gray-50 rounded-lg">
-                      <div className="font-medium mb-2">Informações importantes</div>
+                      <div className="font-medium mb-2">
+                        Informações importantes
+                      </div>
                       <div className="text-sm text-gray-600">
-                        Mantenha uma lista com números de telefone, endereços e informações médicas
+                        Mantenha uma lista com números de telefone, endereços e
+                        informações médicas
                       </div>
                     </div>
                   </div>
-
-                  <Button className="w-full">
-                    <Download className="h-4 w-4 mr-2" />
-                    Baixar Modelo de Plano
-                  </Button>
                 </CardContent>
               </Card>
             </div>
@@ -508,5 +618,5 @@ export default function PreparacaoPage() {
         </Tabs>
       </main>
     </div>
-  )
+  );
 }
