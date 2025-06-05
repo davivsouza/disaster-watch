@@ -1,20 +1,26 @@
-import type { Metadata } from "next";
-import "./globals.css";
+import type React from "react"
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import "./globals.css"
+import { AuthProvider } from "@/hooks/use-auth"
+
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Disaster Watch",
-  description:
-    "O Disaster Watch Monitor é uma plataforma digital desenvolvida com o objetivo de fornecer uma visão clara e acessível sobre eventos extremos que ocorrem ao redor do globo. Em um mundo onde desastres naturais como incêndios, tempestades e terremotos são cada vez mais frequentes e impactantes, esta ferramenta busca centralizar informações de fontes confiáveis, apresentando-as de forma intuitiva para conscientizar e informar o público.",
-};
+  title: "DisasterWatch - Monitoramento Global de Desastres",
+  description: "Sistema de monitoramento em tempo real de desastres naturais ao redor do mundo",
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="pt-br">
-      <body>{children}</body>
+    <html lang="pt-BR">
+      <body className={inter.className}>
+        <AuthProvider>{children}</AuthProvider>
+      </body>
     </html>
-  );
+  )
 }
