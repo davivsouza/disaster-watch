@@ -44,7 +44,6 @@ export default function RegisterPage() {
   });
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-  const [acceptTerms, setAcceptTerms] = useState(false);
   const [acceptNewsletter, setAcceptNewsletter] = useState(true);
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -95,11 +94,6 @@ export default function RegisterPage() {
 
     if (!passwordMatch) {
       setError("Senhas não coincidem");
-      return;
-    }
-
-    if (!acceptTerms) {
-      setError("Você deve aceitar os termos de uso");
       return;
     }
 
@@ -354,11 +348,7 @@ export default function RegisterPage() {
                 )}
               </div>
 
-              <Button
-                type="submit"
-                className="w-full"
-                disabled={isLoading || !acceptTerms}
-              >
+              <Button type="submit" className="w-full" disabled={isLoading}>
                 {isLoading ? (
                   <div className="flex items-center space-x-2">
                     <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white" />

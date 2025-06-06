@@ -61,24 +61,6 @@ export default function LoginPage() {
     }
   };
 
-  const handleDemoLogin = async () => {
-    setEmail("admin@disasterwatch.com");
-    setPassword("admin123");
-    setError("");
-    setIsLoading(true);
-
-    try {
-      const result = await login("admin@disasterwatch.com", "admin123");
-      if (result.success) {
-        router.push("/");
-      }
-    } catch (err) {
-      setError("Erro ao fazer login de demonstração");
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex items-center justify-center p-4">
       <div className="w-full max-w-md space-y-6">
@@ -92,22 +74,6 @@ export default function LoginPage() {
             Monitoramento global de desastres naturais
           </p>
         </div>
-
-        {/* Demo Alert */}
-        <Alert className="border-blue-200 bg-blue-50">
-          <CheckCircle className="h-4 w-4 text-blue-600" />
-          <AlertDescription className="text-blue-800">
-            <strong>Demonstração:</strong> Use admin@disasterwatch.com /
-            admin123 ou{" "}
-            <button
-              onClick={handleDemoLogin}
-              className="underline hover:no-underline font-medium"
-              disabled={isLoading}
-            >
-              clique aqui para login automático
-            </button>
-          </AlertDescription>
-        </Alert>
 
         {/* Login Form */}
         <Card className="shadow-lg border-0">
